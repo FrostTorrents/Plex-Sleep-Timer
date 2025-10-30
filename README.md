@@ -47,7 +47,7 @@ This extension:
 - Stores settings **locally** in your browser  
 - Uses only the permissions necessary for its core functionality
 
-[View Privacy Policy »](TBA)
+[View Privacy Policy »](https://gist.github.com/FrostTorrents/03c22c2ace22aec477e8a279e5f41821)
 
 ---
 
