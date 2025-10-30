@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const suggestionContainer = document.getElementById("suggestion");
   const statusEl = document.getElementById("statusMessage");
 
-  // Preset buttons
   document.querySelectorAll(".preset").forEach(button => {
     button.addEventListener("click", () => {
       const mins = parseInt(button.dataset.minutes);
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Load saved UI state
   chrome.storage.local.get(["plexSleepEndTime", "timerLog", "plexSleepOptions"], data => {
     if (data.timerLog) {
       logContainer.innerHTML = data.timerLog.map(entry => `<div class="log">${entry}</div>`).join("");
@@ -84,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Smart suggestion
   chrome.storage.local.get(["usageDurations"], data => {
     const usage = data.usageDurations || [];
     if (usage.length > 0) {
