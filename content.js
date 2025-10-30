@@ -222,7 +222,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-// Restore if extension reloads
 chrome.storage.local.get(["plexSleepEndTime", "plexSleepOptions"], data => {
   if (data.plexSleepEndTime && data.plexSleepEndTime > Date.now()) {
     startSleepTimer(data.plexSleepEndTime, data.plexSleepOptions || {});
