@@ -6,29 +6,59 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Plex Sleep Timer</h1>
+  <div class="tab-header">
+    <button class="tab-button active" data-tab="timerTab">Sleep Timer</button>
+    <button class="tab-button" data-tab="skipperTab">Skipper</button>
+  </div>
 
-    <div class="presets">
-      <button class="preset" data-minutes="15">15m</button>
-      <button class="preset" data-minutes="30">30m</button>
-      <button class="preset" data-minutes="60">60m</button>
+  <!-- ⏱ Sleep Timer Tab -->
+  <div class="tab-content" id="timerTab">
+    <div class="container">
+      <h1>Plex Sleep Timer</h1>
+
+      <div class="presets">
+        <button class="preset" data-minutes="15">15m</button>
+        <button class="preset" data-minutes="30">30m</button>
+        <button class="preset" data-minutes="60">60m</button>
+      </div>
+
+      <label for="timerInput">Custom time (minutes)</label>
+      <input type="number" id="timerInput" min="1" max="480" value="60" />
+
+      <label><input type="checkbox" id="muteInsteadOfPause" /> Mute instead of pause</label>
+      <label><input type="checkbox" id="dimScreen" /> Dim screen when timer ends</label>
+      <label><input type="checkbox" id="countdownToggle" /> Show countdown in player</label>
+      <label><input type="checkbox" id="lowerVolumeCheckbox" /> Lower volume instead of mute/pause</label>
+
+      <div id="volumeLevelContainer" style="display: none; margin-left: 20px;">
+        Volume level (%): 
+        <input type="number" id="volumeLevelInput" min="0" max="100" value="10" style="width: 60px;" />
+      </div>
+
+      <div class="buttons">
+        <button id="startBtn">⏱️ Start</button>
+        <button id="cancelBtn">❌ Cancel</button>
+      </div>
+
+      <div id="suggestion"></div>
+      <div id="logContainer"></div>
+      <div id="statusMessage"></div>
     </div>
+  </div>
 
-    <label for="timerInput">Custom time (minutes)</label>
-    <input type="number" id="timerInput" min="1" max="480" value="60" />
+  <!-- ⏭ Skipper Tab -->
+  <div class="tab-content" id="skipperTab" style="display: none;">
+    <div class="container">
+      <h1>Skipper</h1>
+      <label><input type="checkbox" id="enableSkipper" /> Enable Skipper</label>
 
-    <label><input type="checkbox" id="muteInsteadOfPause" /> Mute instead of pause</label>
-    <label><input type="checkbox" id="dimScreen" /> Dim screen when timer ends</label>
-    <label><input type="checkbox" id="countdownToggle" /> Show countdown in player</label>
+      <div style="margin-top: 10px;">
+        <label for="skipperDelay">Delay between checks (ms):</label>
+        <input type="number" id="skipperDelay" min="100" step="100" value="1000" />
+      </div>
 
-    <div class="buttons">
-      <button id="startBtn">⏱️ Start</button>
-      <button id="cancelBtn">❌ Cancel</button>
+      <button id="saveSkipperSettings" style="margin-top: 10px;">💾 Save</button>
     </div>
-
-    <div id="suggestion"></div>
-    <div id="logContainer"></div>
   </div>
 
   <script src="popup.js"></script>
