@@ -33,7 +33,8 @@
         "https://*.plex.tv/*"
       ],
       "js": [
-        "content.js"
+        "content.js",
+		"skipper.js"
       ],
       "run_at": "document_idle"
     }
