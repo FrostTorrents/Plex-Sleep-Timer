@@ -60,7 +60,7 @@ This extension:
 ## 📥 Feedback & Support
 
 Have a suggestion, bug, or question?  
-Open an [issue](https://github.com/FrostTorrents/Plex-Sleep-Timer/issues) or contact via the Chrome Web Store support form.
+Open an [issue](https://github.com/FrostTorrents/Plex-Plus/issues) or contact via the Chrome Web Store support form.
 
 ---
 
